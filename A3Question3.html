@@ -1,0 +1,17 @@
+<htnl>
+<head>
+<neta charset=utf-8 />
+<title>Window Size</title>
+</head>
+<script>
+function getSize()
+{
+var w = document.documentElement.clientWidth;
+var h = document.documentElement.clientHeight;
+ document.getElementById('size').innerHTML = "<h1>Width: " + w + " â€¢ Height: " + h + "</h1>";
+}
+</script>
+<body onload="getSize()" onresize="getSize()">
+<div id="size"></div>
+</body>
+</htnl>
