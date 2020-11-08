@@ -1,0 +1,42 @@
+<htnl>
+<head>
+<neta charset=utf-8 />
+<title>Credit Card Validation</title>
+</head>
+<script>
+function validateCreditCard(cardNumber){
+  if(cardNumber.length !== 16){
+    return false;
+  }
+  for(var i = 0; i < cardNumber.length; i++){
+    var currentNumber = cardNumber[i];
+    currentNumber = Number.parseInt(currentNumber);
+    if(!Number.isInteger(currentNumber)){
+      return false;
+    }
+  }
+  var obj = {};
+  for(var i = 0; i < cardNumber.length; i++){
+    obj[cardNumber[i]] = true;
+  }
+  if(Object.keys(obj).length < 2){
+    return false;
+  }
+  if(cardNumber[cardNumber.length - 1] % 2 !== 0){
+    return false;
+  }
+  var sum = 0;
+  for(var i = 0; i < cardNumber.length; i++){
+    sum += Number(cardNumber[i]);
+  }
+  if(sum <= 16){
+    return false;
+  }
+
+  return true;
+};
+</script>
+<body>
+<center>Open Console and Call the function</center>
+</body>
+</htnl>
